@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "itodo"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.2.1"
+djangorestframework = "^3.14.0"
+psycopg2 = "^2.9.6"
+django-filter = "^23.2"
+drf-yasg = "^1.21.5"
+djangorestframework-simplejwt = "^5.2.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
