@@ -9,14 +9,12 @@ from .serializers import TaskSerializer
 class ListTask(generics.ListCreateAPIView):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
+    pagination_class = None
 
     def get_queryset(self):
-        queryset = self.queryset
-
         user = self.request.user
-
-        queryset = queryset.filter(owner=user)
-
+        queryset = self.queryset.filter(owner=user)
+        
         return queryset
     
     def perform_create(self, serializer):
@@ -28,10 +26,7 @@ class DetailTask(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = TaskSerializer
 
     def get_queryset(self):
-        queryset = self.queryset
-
         user = self.request.user
-
-        queryset = queryset.filter(owner=user)
+        queryset = self.queryset.filter(owner=user)
 
         return queryset
