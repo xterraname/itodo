@@ -3,6 +3,7 @@ from django.urls import include, path
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
@@ -26,3 +27,6 @@ urlpatterns = [
     path('api/', include('src.todo.urls')),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
+
