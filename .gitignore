@@ -31,7 +31,7 @@ parts/
 sdist/
 var/
 wheels/
-poetry.lock/
+poetry.lock
 
 # Installer logs
 pip-delete-this-directory.txt
